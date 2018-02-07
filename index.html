@@ -16,6 +16,8 @@
     <script src="js/map.js"></script>
 </head>
 <body onload="initialize()" onunload="GUnload()">
+	<div id="laggeif" style="display: none;"></div>
+	
 <div class="container mycontainer">
 	<header id="header">
 
@@ -34,7 +36,7 @@
 		</div>
 		<div class="col-md-2">
 			<div class="form-group">
-			  <input type="text" class="form-control" name="datepicker" id="datepicker" placeholder="Выберите дату" required="">
+			  <input type="text" class="form-control" name="datepicker" id="datepicker" placeholder="Выберите дату">
 			</div>
 			<p id="mistake2" style="color:red; display: none;">Не указана дата!</p>
 		</div>
@@ -52,33 +54,30 @@
 				<h2 id="weath"></h2>
 			</div>
 		</div>
+		<div id="message"></div>
 		<div class="col-md-3 col-xs-12 text-center">
-			<h1 class="text-center">Ночь</h1>
-			<img src="img/state/cloudy3_night.png" alt="" class="img-responsive text-center">
-			<h1>-5° C</h1>
-			<p>Ощущается на -3°</p>
-			<h2>Тучи</h2>
+			<h1 class="text-center">Сейчас</h1>
+			<img src="" alt="" class="img-responsive text-center" width="64px" id="myimage">
+			<h1 id="temp"></h1>
+			<h2 id="descr"></h2>
 		</div>
 		<div class="col-md-3 col-xs-12 text-center">
-			<h1 class="text-center">Утро</h1>
-			<img src="img/state/mist.png" alt="" class="img-responsive text-center">
-			<h1>-2° C</h1>
-			<p>Ощущается на -1°</p>
-			<h2>Туман</h2>
+			<h1 class="text-center">Через 3 часа</h1>
+			<img src="" alt="" class="img-responsive text-center" width="64px" id="myimage1">
+			<h1 id="temp1"></h1>
+			<h2 id="descr1"></h2>
 		</div>
 		<div class="col-md-3 col-xs-12 text-center">
-			<h1 class="text-center">День</h1>
-			<img src="img/state/cloudy1.png" alt="" class="img-responsive text-center">
-			<h1>2° C</h1>
-			<p>Ощущается на 1°</p>
-			<h2>Небольшие тучи</h2>
+			<h1 class="text-center">Через 6 часов</h1>
+			<img src="" alt="" class="img-responsive text-center" width="64px" id="myimage2">
+			<h1 id="temp2"></h1>
+			<h2 id="descr2"></h2>
 		</div>
 		<div class="col-md-3 col-xs-12 text-center">
-			<h1 class="text-center">Вечер</h1>
-			<img src="img/state/snow1_night.png" alt="" class="img-responsive text-center">
-			<h1>-1° C</h1>
-			<p>Ощущается на -3°</p>
-			<h2>Легкий снег</h2>
+			<h1 class="text-center">Через 9 часов</h1>
+			<img src="" alt="" class="img-responsive text-center" width="64px" id="myimage3">
+			<h1 id="temp3"></h1>
+			<h2 id="descr3"></h2>
 		</div>
 	</section>
 </div>
