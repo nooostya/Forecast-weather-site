@@ -5,47 +5,43 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Gismeteo</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
 	<link rel="stylesheet" href="libs/animate/animate.min.css"/>
 	<link rel="stylesheet" href="css/style.css">
-
-	<script src="http://maps.google.com/maps?file=api&amp;v=3&amp;key=AIzaSyC1D4w8Jqgy3OrsywB5KxBdndSnWSyCEBs"
-            type="text/javascript"></script>
+	<script src="http://maps.google.com/maps?file=api&amp;v=3&amp;key=AIzaSyC1D4w8Jqgy3OrsywB5KxBdndSnWSyCEBs" type="text/javascript"></script>
     <script src="js/map.js"></script>
 </head>
+
 <body onload="initialize()" onunload="GUnload()">
-	<div id="laggeif" style="display: none;"></div>
-	
 <div class="container mycontainer">
-	<header id="header">
-
-	</header>
-
+	<header id="header"></header>
 </div>
 
 <div class="container">
 	<section id="search">
 		<div class="row">
-		<div class="col-md-8">
-			<div class="form-group">
-			  <input type="text" class="form-control" id="city" placeholder="Введите Ваш город" required="" autofocus>
+			<div class="col-md-8">
+				<div class="form-group">
+				  <input type="text" class="form-control" id="city" placeholder="Введите Ваш город" required="" autofocus>
+				</div>
+				<p id="mistake1">Неверно указан город!</p>
 			</div>
-			<p id="mistake1" style="color:red; display: none;">Неверно указан город!</p>
-		</div>
-		<div class="col-md-2">
-			<div class="form-group">
-			  <input type="text" class="form-control" name="datepicker" id="datepicker" placeholder="Выберите дату">
+
+			<div class="col-md-2">
+				<div class="form-group">
+				  <input type="text" class="form-control" name="datepicker" id="datepicker" placeholder="Выберите дату">
+				</div>
+				<p id="mistake2">Не указана дата!</p>
 			</div>
-			<p id="mistake2" style="color:red; display: none;">Не указана дата!</p>
-		</div>
-		<div class="col-md-2 text-center">
-			<div class="form-group">
-			  <button class="btn btn-default" id="get-weather" onclick="getAdress()">Узнать погоду</button>
+
+			<div class="col-md-2 text-center">
+				<div class="form-group">
+				  <button class="btn btn-default" id="get-weather" onclick="getAdress()">Узнать погоду</button>
+				</div>
 			</div>
 		</div>
-	</div>
 	</section>
 
 	<section id="weather">
@@ -81,18 +77,18 @@
 		</div>
 	</section>
 </div>
-</div>
+
 	<div class="container mycontainer">
-	<section id="map">
-		<div class="row">
-		<div class="col-md-12"><h1 class="text-center" id="cite"></h1>
-			<div id="map_canvas" style="width: 100%; height: 400px"></div>
-			<p class="text-center" style="margin-top: 30px;">Copyright &copy; 2018, My Practice</p>
-		</div>
-		</div>
-	</section>
+		<section id="map">
+			<div class="row">
+			<div class="col-md-12"><h1 class="text-center" id="cite"></h1>
+				<div id="map_canvas"></div>
+				<p class="text-center" id="foottext">Copyright &copy; 2018, My Practice</p>
+			</div>
+			</div>
+		</section>
 	</div>
-	
+
 </body>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
@@ -100,47 +96,6 @@
 <script src="js/waypoints-1.6.2.min.js"></script>
 <script src="libs/animate/animate-css.js"></script>
 <script src="libs/animate/waypoints.min.js"></script>
+<script src="js/datepickest.js"></script>
 <script src="js/script.js"></script>
-
-<script>
-( function( factory ) {
-  if ( typeof define === "function" && define.amd ) {
-
-    // AMD. Register as an anonymous module.
-    define( [ "../widgets/datepicker" ], factory );
-  } else {
-
-    // Browser globals
-    factory( jQuery.datepicker );
-  }
-}( function( datepicker ) {
-
-datepicker.regional.ru = {
-  closeText: "Закрыть",
-  prevText: "&#x3C;Пред",
-  nextText: "След&#x3E;",
-  currentText: "Сегодня",
-  monthNames: [ "Январь","Февраль","Март","Апрель","Май","Июнь",
-  "Июль","Август","Сентябрь","Октябрь","Ноябрь","Декабрь" ],
-  monthNamesShort: [ "Янв","Фев","Мар","Апр","Май","Июн",
-  "Июл","Авг","Сен","Окт","Ноя","Дек" ],
-  dayNames: [ "воскресенье","понедельник","вторник","среда","четверг","пятница","суббота" ],
-  dayNamesShort: [ "вск","пнд","втр","срд","чтв","птн","сбт" ],
-  dayNamesMin: [ "Вс","Пн","Вт","Ср","Чт","Пт","Сб" ],
-  weekHeader: "Нед",
-  dateFormat: "dd.mm.yy",
-  firstDay: 1,
-  isRTL: false,
-  showMonthAfterYear: false,
-  yearSuffix: "" };
-datepicker.setDefaults( datepicker.regional.ru );
-
-return datepicker.regional.ru;
-
-} ) );
-$.datepicker.setDefaults($.datepicker.regional['ru']);
-  $( function() {
-    $( "#datepicker" ).datepicker();
-  } );
- </script>
 </html>

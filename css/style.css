@@ -7,6 +7,9 @@ body{
 	background-color: #b8d4f9;
 
 }
+#mistake1, #mistake2{color:red; display: none;}
+#map_canvas{width: 100%; height: 400px;}
+#foottext{margin-top: 30px;}
 .mycontainer{
 padding: 0px !important;
 position: relative;
@@ -16,7 +19,7 @@ position: relative;
 	background-color: #fff;
 }
 #header{
-	background: url("http://img18.3lian.com/d/file/201707/05/dae328e40c18c4b64564a4385b450786.jpg") no-repeat;
+	background: url("../img/header.jpg") no-repeat;
 	height: 300px;
 	background-size: cover;
 }

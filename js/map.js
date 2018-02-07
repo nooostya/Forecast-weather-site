@@ -1,5 +1,6 @@
     //<![CDATA[
     var map;
+    var point;
 
     function initialize() {
         //создаем объект для работы с картой
@@ -46,6 +47,7 @@
             point = new GLatLng(place.Point.coordinates[1],
                                place.Point.coordinates[0]);
             marker = new GMarker(point);
+
             map.setCenter(new GLatLng(place.Point.coordinates[1], place.Point.coordinates[0]), 8);
             //размещаем надпись на карте
             map.addOverlay(marker);
